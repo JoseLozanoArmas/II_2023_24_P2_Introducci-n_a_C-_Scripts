@@ -187,10 +187,125 @@ public class ejercicio6 : MonoBehaviour
 
 ### Ejercicio 7
 ```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ejercicio7 : MonoBehaviour
+{
+    public Material current_material;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A) == true) {
+            Renderer rend = GetComponent<Renderer>();
+            rend.material = current_material;
+        }
+        
+    }
+}
 ```
 
 ### Ejercicio 8
 ```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ejercicio8 : MonoBehaviour
+{
+    int size = 3;
+    float[] vector;
+    public GameObject first_sphere;
+    public GameObject second_sphere;
+    public GameObject third_sphere;
+    public Material current_material;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        vector = new float[size];
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        GameObject cube = GameObject.FindWithTag("Cube");
+        first_sphere = GameObject.FindWithTag("second_group");
+        second_sphere = GameObject.FindWithTag("second_group");
+        third_sphere = GameObject.FindWithTag("second_group");
+        float distance_with_first = Vector3.Distance(cube.transform.position, first_sphere.transform.position);
+        float distance_with_second = Vector3.Distance(cube.transform.position, second_sphere.transform.position);
+        float distance_with_third = Vector3.Distance(cube.transform.position, third_sphere.transform.position);
+        
+        vector[0] = distance_with_first;
+        vector[1] = distance_with_second;
+        vector[2] = distance_with_third;
+        float aux_nearest_distances = distance_with_first;
+        if (aux_nearest_distances > distance_with_second) { aux_nearest_distances = distance_with_second; } 
+        if (aux_nearest_distances > distance_with_third) { aux_nearest_distances = distance_with_third; }
+        float aux_farthest_distance = distance_with_first;
+        if (aux_farthest_distance < distance_with_second) { aux_farthest_distance = distance_with_second; } 
+        if (aux_farthest_distance < distance_with_third) { aux_farthest_distance = distance_with_third; }
+        
+        if (aux_nearest_distances == distance_with_first) {
+            Vector3 new_position = transform.position;
+            new_position.y = cube.transform.position.y + 2;
+            first_sphere.transform.position = new_position;
+        }
+        if (aux_nearest_distances == distance_with_second) {
+            if (aux_nearest_distances == distance_with_first) {
+                Vector3 new_position = transform.position;
+                new_position.y = cube.transform.position.y + 2;
+                second_sphere.transform.position = new_position;
+            }
+        }
+        if (aux_nearest_distances == distance_with_third) {
+            if (aux_nearest_distances == distance_with_first) {
+                Vector3 new_position = transform.position;
+                new_position.y = cube.transform.position.y + 2;
+                third_sphere.transform.position = new_position;
+            }
+        }
+
+        if (aux_farthest_distance == distance_with_first) {
+            if (Input.GetKeyDown(KeyCode.Space) == true) {
+               Renderer rend = first_sphere.GetComponent<Renderer>();
+               rend.material = current_material;
+            }
+        }
+        if (aux_farthest_distance == distance_with_second) {
+            if (Input.GetKeyDown(KeyCode.Space) == true) {
+               Renderer rend = second_sphere.GetComponent<Renderer>();
+               rend.material = current_material;
+            }
+        }
+        if (aux_farthest_distance == distance_with_third) {
+            if (Input.GetKeyDown(KeyCode.Space) == true) {
+               Renderer rend = third_sphere.GetComponent<Renderer>();
+               rend.material = current_material;
+            }
+        }
+    }
+}
+
 ```
 
 ## Gifs con las demostraciones
+A continuación se adjunta un gif con la escena realizada. En este caso el ejercicio 1 y 2
+
+![Visualización de la escena Ej 1 y 2]
+
+Luego los ejercicios 3, 4 y 5
+![Visualización de la escena Ej 3, 4 y 5]
+
+Y finalmente los ejercicios 6, 7 y 8 
+![Visualización de la escena Ej 6, 7 y 8]
+
