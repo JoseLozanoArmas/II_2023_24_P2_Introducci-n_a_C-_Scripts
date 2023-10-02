@@ -308,13 +308,25 @@ public class ejercicio8 : MonoBehaviour
 ```
 
 ## Gifs con las demostraciones
-A continuación se adjunta un gif con la escena realizada. En este caso el ejercicio 1 y 2
+A continuación se adjunta un gif con la escena realizada. 
 
+Ejercicios 1 y 2
 ![Visualización de la escena Ej 1 y 2](P2-EJ1.gif)
 
-Luego los ejercicios 3, 4 y 5
-![Visualización de la escena Ej 3, 4 y 5](P2-EJ-3_4_5.gif)
+Ejercicio 3
+![Visualización de la escena Ej 3](P2-EJ-3.gif)
 
-Y finalmente los ejercicios 6, 7 y 8 
-![Visualización de la escena Ej 6, 7 y 8](P2-EJ-6_7_8.gif)
+Ejercicio 4
+![Visualización de la escena Ej 4](P2-EJ-4.gif)
 
+Ejercicio 5
+![Visualización de la escena Ej 5](P2-EJ-5.gif)
+
+Ejercicio 6
+![Visualización de la escena Ej 6](P2-EJ-6.gif)
+
+Ejercicio 7
+![Visualización de la escena Ej 7](P2-EJ-7.gif)
+
+Ejercicio 8
+![Visualización de la escena Ej 8](P2-EJ-8.gif)
