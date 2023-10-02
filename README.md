@@ -204,13 +204,22 @@ public class ejercicio7 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) == true) {
-            Renderer rend = GetComponent<Renderer>();
-            rend.material = current_material;
+        if (gameObject.tag == "Cylinder") {
+            if (Input.GetKeyDown(KeyCode.A) == true) {
+                Renderer rend = GetComponent<Renderer>();
+                rend.material = current_material;
+            }
+        }
+        if (gameObject.tag == "Cube") {
+            if (Input.GetKeyDown(KeyCode.UpArrow) == true) {
+                Renderer rend = GetComponent<Renderer>();
+                rend.material = current_material;
+            }
         }
         
     }
 }
+
 ```
 
 ### Ejercicio 8
